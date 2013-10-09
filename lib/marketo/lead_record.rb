@@ -35,6 +35,11 @@ module Rapleaf
       def set_attribute(name, value)
         @attributes[name] = value
       end
+      
+      # update the value of the named attribute, only if blank
+      def set_attribute_if_blank(name, value)
+        set_attribute(name, value) if get_attribute(name).blank?
+      end
 
       # get the value for the named attribute
       def get_attribute(name)
