@@ -1,10 +1,10 @@
-marketo_gem
-===========
+marketo2
+========
 
 ## Install
 
     #GemFile
-    gem "marketo", :git => "git@github.com:hanaiapa/marketo_gem.git"
+    gem "marketo2"
 
 ## Setup
   
@@ -18,7 +18,7 @@ marketo_gem
       marketo_user.set_attribute_if_blank('FirstName', self.first_name)
       marketo_user.set_attribute_if_blank('LastName', self.last_name)
       marketo_user.set_attribute_if_blank('LeadSource', self.source)
-      marketo_user.set_attribute_if_blank('App_Name__c', self.owned_applications.production.first.name) if self.owned_applications.production.first
+      marketo_user.set_attribute_if_blank('App_Name__c', self.app_name)
       marketo_user.set_attribute('Integration_Status_FXSDK_iOS', self.ios_status)
       marketo_user.set_attribute('Integration_Status_FXSDK_Android', self.android_status)
       response = MARKETO.sync_lead_record(marketo_user)
